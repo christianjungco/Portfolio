@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christian Jungco — Portfolio</title>
+
+  <!-- Tailwind CDN (no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* subtle replacement for Framer Motion */
+    .fade-in { animation: fadeIn .5s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+    /* small utility: image cover inside fixed-height card */
+    .project-media { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* make video fill like an image */
+    .project-video { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* placeholder dashed area center content */
+    .placeholder-box { border: 1px dashed rgba(148,163,184,.14); border-radius: 0.75rem; padding: 1.25rem; }
+  </style>
+</head>
+<body class="bg-[#1b1b1b] text-white antialiased">
+  <div class="max-w-7xl mx-auto px-8 py-16">
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-md bg-[#EFD318] flex items-center justify-center text-black font-semibold">CJ</div>
+        <div class="text-sm opacity-80">Christian Jungco</div>
+      </div>
+      <nav class="space-x-8 text-sm opacity-80 hidden md:flex">
+        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="text-[#EFD318]">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="grid grid-cols-12 gap-8 items-center mb-20">
+      <!-- left -->
+      <div class="col-span-7 fade-in">
+        <h1 class="text-5xl md:text-6xl leading-tight font-extrabold tracking-tight">
+          Christian Jungco
+          <span class="block text-xl font-medium mt-3 text-[#EFD318]">Creative Director, Animator & Brand Builder</span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-gray-300">
+          I design motion-led brand experiences and craft visual narratives that increase clarity and conversion. I combine animation,
+          art direction, and strategic brand thinking to create assets for web, film and product marketing.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#projects" class="inline-flex items-center gap-3 px-6 py-3 rounded-md bg-[#EFD318] text-black font-semibold shadow-lg">View Work</a>
+          <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3 rounded-md border border-gray-700 text-sm opacity-90">Hire Me</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4 text-xs text-gray-400">
+          <span>Available for freelance — open to collaborations</span><span class="px-2">•</span><span>Based in Philippines — works globally</span>
+        </div>
+      </div>
+
+      <!-- right: hero preview -->
+      <div class="col-span-5">
+        <div class="rounded-2xl bg-gradient-to-br from-[#2a2a2a] to-[#111111] border border-gray-800 overflow-hidden shadow-2xl h-[420px] md:h-[480px] flex items-center justify-center relative">
+          <!-- If you want a video preview: place file at assets/hero-preview.mp4 and the script below will attach it automatically. -->
+          <div id="hero-media" class="absolute inset-4 rounded-xl border border-dashed border-gray-700 flex items-center justify-center p-6 placeholder-box">
+            <div class="text-center opacity-60">
+              <div class="mb-4 text-sm">Animated Project Preview</div>
+              <div class="text-xs">(Replace with <hero-preview class="mp4"></hero-preview> in /assets)</div>
+            </div>
+          </div>
+
+          <!-- decorative soft shape -->
+          <div class="absolute -bottom-10 -right-10 w-56 h-56 rounded-full opacity-10 bg-gradient-to-tr from-[#EFD318] to-transparent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (populated from JS) -->
+    <section id="projects" class="mb-20">
+      <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- About & Skills -->
+    <section id="about" class="grid grid-cols-12 gap-8 items-start mb-20">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="rounded-xl overflow-hidden border border-gray-800 bg-white text-black p-6">
+          <div class="w-full h-64 rounded-md overflow-hidden mb-4 bg-gray-100">
+            <!-- Portrait: replace assets/portrait.jpg -->
+            <img id="portrait-img" src="assets/portrait.jpg" alt="Portrait" class="object-cover w-full h-full" onerror="this.src='https://picsum.photos/seed/portrait/800/1000'"/>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Christian Jungco</h3>
+          <p class="text-sm text-gray-700">
+            I’m a creative director and animator specializing in visual storytelling, brand identity, and motion design. I lead
+            interdisciplinary teams to produce scalable assets — from short-form social animations to long-form explainer videos — all informed by strategy and craft.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7">
+        <h3 class="text-2xl font-semibold mb-4">Skills & Services</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- four skill cards -->
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">A</div>
+            <div>
+              <div class="font-medium">Animation & Motion Design</div>
+              <div class="text-sm opacity-70">2D animation, frame-by-frame, video editing, motion graphics,</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">B</div>
+            <div>
+              <div class="font-medium">Art Direction</div>
+              <div class="text-sm opacity-70">Concepting, Illustrations, storyboarding, visual systems</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">C</div>
+            <div>
+              <div class="font-medium">Brand Building</div>
+              <div class="text-sm opacity-70">Identity design, tone & messaging, launch strategy</div>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">D</div>
+            <div>
+              <div class="font-medium">Creative Consulting</div>
+              <div class="text-sm opacity-70">Workshops, creative reviews, pipeline optimization</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h4 class="text-lg font-medium mb-3">Tools & Workflow</h4>
+          <div class="flex flex-wrap gap-3 text-sm text-gray-300">
+            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe After Effects</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe Animate</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Social Media Management</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">SEO</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Photoshop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="mb-20">
+      <h3 class="text-2xl font-semibold mb-6">Testimonials</h3>
+      <div class="relative bg-[#111111] border border-gray-800 rounded-xl p-8">
+        <div class="flex items-start gap-6">
+          <div class="flex-1">
+            <blockquote id="testimonial" class="text-gray-200 text-lg leading-relaxed fade-in">
+              “Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.”
+            </blockquote>
+            <div class="mt-4 text-sm text-gray-400" id="testimonial-author">A. Lopez — Product Lead</div>
+          </div>
+
+          <div class="w-36 flex flex-col gap-3">
+            <button id="prev-testi" class="rounded-md border border-gray-700 px-3 py-2 text-sm">Prev</button>
+            <button id="next-testi" class="rounded-md bg-[#EFD318] px-3 py-2 text-black font-medium">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h3 class="text-3xl font-semibold mb-4">Let’s make something together</h3>
+          <p class="text-gray-300 mb-6 max-w-xl">Describe your project or say hi. I'll get back within 48 hours.</p>
+          <div class="rounded-xl bg-[#0f0f0f] p-6 border border-gray-800">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label class="text-sm opacity-80">Name</label>
+                <input name="name" required class="w-full mt-2 p-3 rounded-md bg-[#1c1c1c] border border-gray-700"/>
+              </div>
+              <div>
+                <label class="text-sm opacity-80">Email</label>
+                <input name="email" type="email" required class="w-full mt-2 p-3 rounded-md bg-[#1c1c1c] border border-gray-700"/>
+              </div>
+              <div>
+                <label class="text-sm opacity-80">Message</label>
+                <textarea name="message" rows="6" required class="w-full mt-2 p-3 rounded-md bg-[#1c1c1c] border border-gray-700"></textarea>
+              </div>
+              <div class="flex items-center gap-4">
+                <button type="submit" class="px-6 py-3 bg-[#EFD318] text-black rounded-md font-semibold">Send Message</button>
+                <div class="text-xs text-gray-400">Or email directly: creativesuite.christian@gmail.com</div>
+              </div>
+            </form>
+            <div id="form-result" class="mt-3 text-sm text-green-400 hidden">Message sent! Thank you for reaching out.</div>
+            <!-- 
+              Backend enabled via FormSubmit.co.
+              1. The form below submits directly to your email using FormSubmit.co.
+              2. No JS submit handler is needed; remove or comment out the JS handler for #contact-form.
+              3. Optionally, add a hidden input for spam prevention:
+               <input type="text" name="_honey" style="display:none">
+              4. See https://formsubmit.co/ for more info.
+            -->
+            <script>
+              // Remove or comment out the JS submit handler for #contact-form
+              // document.getElementById('contact-form').addEventListener('submit', ...);
+            </script>
+            <form id="contact-form" action="https://formsubmit.co/creativesuite.christian@gmail.com" method="POST" class="space-y-4">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none">
+              <!-- The rest of your form fields remain unchanged -->
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <div class="rounded-xl border border-gray-800 p-6 bg-[#0b0b0b]">
+            <h4 class="text-lg font-medium mb-2">Availability & Rates</h4>
+            <p class="text-sm text-gray-300 mb-4">Available for freelance and contract work. Day-rate and project-rate options. Pricing varies by scope — please include a short brief for a fast quote.</p>
+            <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
+              <div class="p-4 rounded-md bg-[#111111] border border-gray-800">
+                <div class="font-semibold">Animation</div>
+                <div class="opacity-70 text-xs mt-1">Short-form social to explainer films</div>
+              </div>
+              <div class="p-4 rounded-md bg-[#111111] border border-gray-800">
+                <div class="font-semibold">Branding</div>
+                <div class="opacity-70 text-xs mt-1">Identity & launch systems</div>
+              </div>
+            </div>
+            <div class="mt-6 text-xs text-gray-500">Response window: 48 hours. Please include project goals, timeline and budget range for a tailored proposal.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex items-center justify-between">
+      <div>© <span id="year"></span> Christian Jungco — All rights reserved</div>
+      <div class="space-x-4">
+        <a href="https://www.facebook.com/christianjungco.creatives" class="opacity-80" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.onlinejobs.ph/jobseekers/info/2420743" class="opacity-80" target="_blank" rel="noopener">Onlinejobs.ph</a>
+        <a href="https://www.linkedin.com/in/christian-jungco-17580a177/" class="opacity-80" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /* ========== CONFIG: Replace filenames here ==========
+
+       Place your media files in an `assets/` folder in the same repo.
+       Filenames used by default below (edit if you prefer different names):
+
+         - assets/portrait.jpg               (portrait image)
+         - assets/hero-preview.mp4           (hero preview - video only)
+         - assets/project1.mp4
+         - assets/project2.mp4
+         - ...
+         - assets/project8.mp4
+
+       Recommended sizes:
+         - hero-preview.mp4: 1280×720 (H.264, ~3–10MB depending on length)
+         - project videos: same ratio and web-optimized for quick loading
+    ===================================================== */
+
+    // Projects array (all video)
+const projects = [
+  { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", video: "assets/project1.mp4" },
+  { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", video: "assets/project2.mp4" },
+  { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", video: "assets/project3.mp4" },
+  { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", video: "assets/project4.mp4" },
+  { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", video: "assets/project5.mp4" },
+  { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", video: "assets/project6.mp4" },
+  { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", video: "assets/project7.mp4" },
+  { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", video: "assets/project8.mp4" }
+];
+
+    // Testimonials
+    const testimonials = [
+      { quote: "Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.", author: "A. Lopez — Product Lead" },
+      { quote: "Meticulous direction, timed motion, and crisp visual storytelling — an absolute pleasure to collaborate with.", author: "S. Ramos — Creative Lead" },
+      { quote: "Delivered on-brand animations and helped refine our messaging. Strategic and detail-oriented.", author: "M. Chen — Founder" }
+    ];
+
+    // Render projects grid
+    const grid = document.getElementById('projects-grid');
+    projects.forEach(p => {
+      const a = document.createElement('a');
+      a.href = "#";
+      a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
+      a.innerHTML = `
+        <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
+          <video class="project-video" playsinline muted loop preload="metadata">
+            <source src="${p.video}" type="video/mp4">
+          </video>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
+        </div>
+        <div class="p-4">
+          <div class="text-sm font-medium">${p.title}</div>
+          <div class="text-xs opacity-60 mt-1">${p.subtitle}</div>
+        </div>
+      `;
+      grid.appendChild(a);
+
+      const vid = a.querySelector('video');
+      if (vid) {
+        vid.muted = true;
+        vid.loop = true;
+        vid.play().catch(() => {});
+      }
+    });
+
+    // Hero media: video only
+    (function setupHeroMedia(){
+      const el = document.getElementById('hero-media');
+      const heroVideo = 'assets/hero-preview.mp4';
+
+      const vid = document.createElement('video');
+      vid.className = 'w-full h-full rounded-xl project-video';
+      vid.playsInline = true;
+      vid.muted = true;
+      vid.loop = true;
+      vid.preload = 'metadata';
+      vid.style.objectFit = 'cover';
+
+      const src = document.createElement('source');
+      src.src = heroVideo;
+      src.type = 'video/mp4';
+      vid.appendChild(src);
+
+      el.innerHTML = '';
+      el.appendChild(vid);
+
+      vid.addEventListener('loadedmetadata', () => {
+        vid.play().catch(() => {});
+      });
+    })();
+
+    // Testimonials behaviour
+    let testiIndex = 0;
+    function showTestimonial(){
+      const t = testimonials[testiIndex];
+      document.getElementById('testimonial').innerText = `“${t.quote}”`;
+      document.getElementById('testimonial-author').innerText = t.author;
+    }
+    document.getElementById('prev-testi').addEventListener('click', () => { testiIndex = (testiIndex - 1 + testimonials.length) % testimonials.length; showTestimonial(); });
+    document.getElementById('next-testi').addEventListener('click', () => { testiIndex = (testiIndex + 1) % testimonials.length; showTestimonial(); });
+
+    // Contact form (simulated)
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('form-result').classList.remove('hidden');
+      setTimeout(()=> document.getElementById('form-result').classList.add('hidden'), 3500);
+      this.reset();
+    });
+
+    // Set current year
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // Init first testimonial
+    showTestimonial();
+</script>
