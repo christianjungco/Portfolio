@@ -1,65 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Tailwind Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<!-- HERO -->
+<section class="grid grid-cols-12 gap-8 items-center mb-20">
+  <!-- left -->
+  <div class="col-span-7 fade-in">
+    <h1 class="text-5xl md:text-6xl leading-tight font-extrabold tracking-tight">
+      Christian Jungco
+      <span class="block text-xl font-medium mt-3 text-[#EFD318]">Creative Director, Animator & Brand Builder</span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-gray-300">
+      I design motion-led brand experiences and craft visual narratives that increase clarity and conversion. I combine animation,
+      art direction, and strategic brand thinking to create assets for web, film and product marketing.
+    </p>
+    <div class="mt-8 flex gap-4">
+      <a href="#projects" class="inline-flex items-center gap-3 px-6 py-3 rounded-md bg-[#EFD318] text-black font-semibold shadow-lg">View Work</a>
+      <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3 rounded-md border border-gray-700 text-sm opacity-90">Hire Me</a>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-4 text-xs text-gray-400">
+      <span>Available for freelance — open to collaborations</span><span class="px-2">•</span><span>Based in Philippines — works globally</span>
+    </div>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="relative w-full h-screen bg-gray-900 flex items-center justify-center overflow-hidden">
-    <div class="relative w-full h-full flex items-center justify-center p-4">
+  <!-- right: hero preview -->
+  <div class="col-span-5">
+    <div class="rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden shadow-2xl h-[420px] md:h-[480px] flex items-center justify-center relative p-4">
+      <!-- Video or Image -->
       <video 
-        src="hero-video.mp4" 
-        autoplay muted loop 
-        class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg">
+        src="assets/hero-preview.mp4" 
+        autoplay muted loop playsinline
+        class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg"
+        poster="assets/hero-preview.jpg">
       </video>
-      <!-- Uncomment to use image instead of video -->
-      <!-- <img src="hero-image.jpg" alt="Hero Image" class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg"> -->
-    </div>
-    <div class="absolute text-center text-white p-4">
-      <h1 class="text-4xl md:text-6xl font-bold">Welcome to My Website</h1>
-      <p class="mt-4 text-lg md:text-xl">Your tagline here</p>
-    </div>
-  </section>
+      <!-- Uncomment to use an image instead -->
+      <!-- <img src="assets/hero-preview.jpg" alt="Hero Image" class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg"> -->
 
-  <!-- About Section -->
-  <section class="py-16 bg-white text-gray-900">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6 text-center">About Us</h2>
-      <p class="text-lg leading-relaxed text-center">
-        This is where your introduction or brand story goes. You can describe what you do, your services, or your mission here.
-      </p>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class="py-16 bg-gray-200">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6 text-center">Gallery</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="gallery1.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="gallery2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="gallery3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-md">
+      <!-- Optional overlay text -->
+      <div class="absolute text-center text-white p-4">
+        <h1 class="text-2xl md:text-4xl font-bold">Welcome to My Website</h1>
+        <p class="mt-2 text-sm md:text-lg">Your tagline here</p>
       </div>
+
+      <!-- decorative soft shape -->
+      <div class="absolute -bottom-10 -right-10 w-56 h-56 rounded-full opacity-10 bg-gradient-to-tr from-[#EFD318] to-transparent"></div>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 bg-white text-gray-900">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
-      <p class="mb-4">Email: your@email.com</p>
-      <p>Phone: +123 456 7890</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    <p>&copy; 2025 My Website. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+  </div>
+</section>
