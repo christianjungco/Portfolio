@@ -253,29 +253,27 @@
        Filenames used by default below (edit if you prefer different names):
 
          - assets/portrait.jpg               (portrait image)
-         - assets/hero-preview.mp4 or .jpg   (hero preview - video preferred)
-         - assets/project1.jpg / project1.mp4
-         - assets/project2.jpg / project2.mp4
+         - assets/hero-preview.mp4           (hero preview - video only)
+         - assets/project1.mp4
+         - assets/project2.mp4
          - ...
-         - assets/project8.jpg / project8.mp4
+         - assets/project8.mp4
 
        Recommended sizes:
          - hero-preview.mp4: 1280×720 (H.264, ~3–10MB depending on length)
-         - project thumbnails: 1200×800 (web-optimized: ~200–400KB)
-         - portrait.jpg: 800×1000
+         - project videos: same ratio and web-optimized for quick loading
     ===================================================== */
 
-    // Projects array: specify either image OR video file for each slot.
-    // If both provided, video will be used.
+    // Projects array (all video)
     const projects = [
-      { id: 1, title: "Project 1", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.jpg", video: "assets/project1.mp4" },
-      { id: 2, title: "Project 2", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.jpg", video: null },
-      { id: 3, title: "Project 3", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.jpg", video: "assets/project3.mp4" },
-      { id: 4, title: "Project 4", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.jpg", video: null },
-      { id: 5, title: "Project 5", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.jpg", video: null },
-      { id: 6, title: "Project 6", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.jpg", video: null },
-      { id: 7, title: "Project 7", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.jpg", video: null },
-      { id: 8, title: "Project 8", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.jpg", video: null }
+      { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.jpg", video: "assets/project1.mp4" },
+      { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.jpg", video: "assets/project2.mp4" },
+      { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.jpg", video: "assets/project3.mp4" },
+      { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.jpg", video: "assets/project4.mp4" },
+      { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.jpg", video: "assets/project5.mp4" },
+      { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.jpg", video: "assets/project6.mp4" },
+      { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.jpg", video: "assets/project7.mp4" },
+      { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.jpg", video: "assets/project8.mp4" }
     ];
 
     // Testimonials
@@ -293,14 +291,9 @@
       a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
       a.innerHTML = `
         <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
-          ${p.video ? `
-            <video class="project-video" playsinline muted loop preload="metadata" poster="${p.img}">
-              <source src="${p.video}" type="video/mp4">
-              <img class="project-media" src="${p.img}" alt="${p.title}" />
-            </video>
-          ` : `
-            <img class="project-media" loading="lazy" src="${p.img}" alt="${p.title}" onerror="this.src='https://picsum.photos/1200/800?random=${p.id}'" />
-          `}
+          <video class="project-video" playsinline muted loop preload="metadata">
+            <source src="${p.video}" type="video/mp4">
+          </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
         </div>
         <div class="p-4">
@@ -310,26 +303,19 @@
       `;
       grid.appendChild(a);
 
-      // if video exists, try to play muted autoplay (some browsers allow muted autoplay)
-      if (p.video) {
-        const vid = a.querySelector('video');
-        if (vid) {
-          vid.muted = true;
-          vid.loop = true;
-          // attempt to autoplay; if blocked, show poster image
-          vid.play().catch(() => {});
-        }
+      const vid = a.querySelector('video');
+      if (vid) {
+        vid.muted = true;
+        vid.loop = true;
+        vid.play().catch(() => {});
       }
     });
 
-    // Hero media: replace with video if file exists, else image (we assume file placed by you).
+    // Hero media: video only
     (function setupHeroMedia(){
       const el = document.getElementById('hero-media');
-      // Names to try:
       const heroVideo = 'assets/hero-preview.mp4';
-      const heroImage = 'assets/hero-preview.jpg';
 
-      // We'll try to insert both; if video can't play, the poster/fallback image remains visible.
       const vid = document.createElement('video');
       vid.className = 'w-full h-full rounded-xl project-video';
       vid.playsInline = true;
@@ -337,29 +323,17 @@
       vid.loop = true;
       vid.preload = 'metadata';
       vid.style.objectFit = 'cover';
-      vid.poster = heroImage;
 
       const src = document.createElement('source');
       src.src = heroVideo;
       src.type = 'video/mp4';
       vid.appendChild(src);
 
-      const img = document.createElement('img');
-      img.className = 'object-cover w-full h-full rounded-xl';
-      img.src = heroImage;
-      img.alt = 'Hero preview';
-      img.loading = 'lazy';
-
-      // Replace placeholder with video if the file exists (we try to play; if it fails we fallback to image).
-      // Note: checking file existence via network may be restricted under some hosts; user-hosted files in same repo will work.
-      // We'll attempt to set video and let browser choose.
       el.innerHTML = '';
       el.appendChild(vid);
-      el.appendChild(img);
 
       vid.addEventListener('loadedmetadata', () => {
-        // try autoplay
-        vid.play().catch(() => { /* if blocked, image will remain visible as poster */ });
+        vid.play().catch(() => {});
       });
     })();
 
@@ -384,9 +358,6 @@
     // Set current year
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    // On page load, call show testimonial initial
+    // Init first testimonial
     showTestimonial();
-  </script>
-</body>
-</html>
-
+</script>
