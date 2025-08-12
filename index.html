@@ -246,120 +246,119 @@
     </footer>
   </div>
 
-  <script>
-    /* ========== CONFIG: Replace filenames here ==========
+ <script>
+  /* ========== CONFIG: Replace filenames here ==========
 
-       Place your media files in an `assets/` folder in the same repo.
-       Filenames used by default below (edit if you prefer different names):
+     Place your media files in an `assets/` folder in the same repo.
+     Filenames used by default below (edit if you prefer different names):
 
-         - assets/portrait.jpg               (portrait image)
-         - assets/hero-preview.mp4       (hero preview - video only)
-         - assets/project1.mp4
-         - assets/project2.mp4
-         - ...
-         - assets/project8.mp4
+       - assets/portrait.jpg               (portrait image)
+       - assets/hero-preview.mp4           (hero preview - video only)
+       - All projects now use hero-preview.mp4/.webm
 
-       Recommended sizes:
-         - hero-preview.webm: 1280×720 (H.264, ~3–10MB depending on length)
-         - project videos: same ratio and web-optimized for quick loading
-    ===================================================== */
+     Recommended sizes:
+       - hero-preview.webm: 1280×720 (VP9, ~3–10MB depending on length)
+       - project videos: same ratio and web-optimized for quick loading
+  ===================================================== */
 
-    // Projects array (all video)
-    const projects = [
-      { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.webm", video: "assets/project1.mp4" },
-      { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.webm", video: "assets/project2.mp4" },
-      { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.webm", video: "assets/project3.mp4" },
-      { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.webm", video: "assets/project4.mp4" },
-      { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.webm", video: "assets/project5.mp4" },
-      { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.webm", video: "assets/project6.mp4" },
-      { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.webm", video: "assets/project7.mp4" },
-      { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.webm", video: "assets/project8.mp4" }
-    ];
+  // Projects array (all using hero-preview.mp4)
+  const projects = [
+    { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
+    { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" }
+  ];
 
-    // Testimonials
-    const testimonials = [
-      { quote: "Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.", author: "A. Lopez — Product Lead" },
-      { quote: "Meticulous direction, timed motion, and crisp visual storytelling — an absolute pleasure to collaborate with.", author: "S. Ramos — Creative Lead" },
-      { quote: "Delivered on-brand animations and helped refine our messaging. Strategic and detail-oriented.", author: "M. Chen — Founder" }
-    ];
+  // Testimonials
+  const testimonials = [
+    { quote: "Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.", author: "A. Lopez — Product Lead" },
+    { quote: "Meticulous direction, timed motion, and crisp visual storytelling — an absolute pleasure to collaborate with.", author: "S. Ramos — Creative Lead" },
+    { quote: "Delivered on-brand animations and helped refine our messaging. Strategic and detail-oriented.", author: "M. Chen — Founder" }
+  ];
 
-    // Render projects grid
-    const grid = document.getElementById('projects-grid');
-    projects.forEach(p => {
-      const a = document.createElement('a');
-      a.href = "#";
-      a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
-      a.innerHTML = `
-        <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
-          <video class="project-video" playsinline muted loop preload="metadata">
-            <source src="${p.video}" type="video/mp4">
-          </video>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
-        </div>
-        <div class="p-4">
-          <div class="text-sm font-medium">${p.title}</div>
-          <div class="text-xs opacity-60 mt-1">${p.subtitle}</div>
-        </div>
-      `;
-      grid.appendChild(a);
+  // Render projects grid
+  const grid = document.getElementById('projects-grid');
+  projects.forEach(p => {
+    const a = document.createElement('a');
+    a.href = "#";
+    a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
+    a.innerHTML = `
+      <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
+        <video class="project-video" playsinline muted loop preload="metadata">
+          <source src="${p.video}" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
+      </div>
+      <div class="p-4">
+        <div class="text-sm font-medium">${p.title}</div>
+        <div class="text-xs opacity-60 mt-1">${p.subtitle}</div>
+      </div>
+    `;
+    grid.appendChild(a);
 
-      const vid = a.querySelector('video');
-      if (vid) {
-        vid.muted = true;
-        vid.loop = true;
-        vid.play().catch(() => {});
-      }
-    });
-
-    // Hero media: video only
-    (function setupHeroMedia(){
-      const el = document.getElementById('hero-media');
-      const heroVideo = 'assets/hero-preview.mp4';
-
-      const vid = document.createElement('video');
-      vid.className = 'w-full h-full rounded-xl project-video';
-      vid.playsInline = true;
+    const vid = a.querySelector('video');
+    if (vid) {
       vid.muted = true;
       vid.loop = true;
-      vid.preload = 'metadata';
-      vid.style.objectFit = 'cover';
-
-      const src = document.createElement('source');
-      src.src = heroVideo;
-      src.type = 'video/mp4';
-      vid.appendChild(src);
-
-      el.innerHTML = '';
-      el.appendChild(vid);
-
-      vid.addEventListener('loadedmetadata', () => {
-        vid.play().catch(() => {});
-      });
-    })();
-
-    // Testimonials behaviour
-    let testiIndex = 0;
-    function showTestimonial(){
-      const t = testimonials[testiIndex];
-      document.getElementById('testimonial').innerText = `“${t.quote}”`;
-      document.getElementById('testimonial-author').innerText = t.author;
+      vid.play().catch(() => {});
     }
-    document.getElementById('prev-testi').addEventListener('click', () => { testiIndex = (testiIndex - 1 + testimonials.length) % testimonials.length; showTestimonial(); });
-    document.getElementById('next-testi').addEventListener('click', () => { testiIndex = (testiIndex + 1) % testimonials.length; showTestimonial(); });
+  });
 
-    // Contact form (simulated)
-    document.getElementById('contact-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('form-result').classList.remove('hidden');
-      setTimeout(()=> document.getElementById('form-result').classList.add('hidden'), 3500);
-      this.reset();
+  // Hero media: video only
+  (function setupHeroMedia(){
+    const el = document.getElementById('hero-media');
+    const heroVideo = 'assets/hero-preview.mp4';
+
+    const vid = document.createElement('video');
+    vid.className = 'w-full h-full rounded-xl project-video';
+    vid.playsInline = true;
+    vid.muted = true;
+    vid.loop = true;
+    vid.preload = 'metadata';
+    vid.style.objectFit = 'cover';
+
+    const src = document.createElement('source');
+    src.src = heroVideo;
+    src.type = 'video/mp4';
+    vid.appendChild(src);
+
+    el.innerHTML = '';
+    el.appendChild(vid);
+
+    vid.addEventListener('loadedmetadata', () => {
+      vid.play().catch(() => {});
     });
+  })();
 
-    // Set current year
-    document.getElementById('year').innerText = new Date().getFullYear();
+  // Testimonials behaviour
+  let testiIndex = 0;
+  function showTestimonial(){
+    const t = testimonials[testiIndex];
+    document.getElementById('testimonial').innerText = `“${t.quote}”`;
+    document.getElementById('testimonial-author').innerText = t.author;
+  }
+  document.getElementById('prev-testi').addEventListener('click', () => { testiIndex = (testiIndex - 1 + testimonials.length) % testimonials.length; showTestimonial(); });
+  document.getElementById('next-testi').addEventListener('click', () => { testiIndex = (testiIndex + 1) % testimonials.length; showTestimonial(); });
 
-    // Init first testimonial
-    showTestimonial();
+  // Contact form (simulated)
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('form-result').classList.remove('hidden');
+    setTimeout(()=> document.getElementById('form-result').classList.add('hidden'), 3500);
+    this.reset();
+  });
+
+  // Set current year
+  document.getElementById('year').innerText = new Date().getFullYear();
+
+  // Init first testimonial
+  showTestimonial();
 </script>
+
+
 
 
