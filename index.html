@@ -253,9 +253,9 @@
        Filenames used by default below (edit if you prefer different names):
 
          - assets/portrait.jpg               (portrait image)
-         - assets/hero-preview.webm          (hero preview - video only)
-         - assets/project1.webm
-         - assets/project2.webm
+         - assets/hero-preview.mp4       (hero preview - video only)
+         - assets/project1.mp4
+         - assets/project2.mp4
          - ...
          - assets/project8.mp4
 
@@ -266,14 +266,14 @@
 
     // Projects array (all video)
     const projects = [
-      { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.webm", video: "assets/project1.webm" },
-      { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.webm", video: "assets/project2.webm" },
-      { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.webm", video: "assets/project3.webm" },
-      { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.webm", video: "assets/project4.webm" },
-      { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.webm", video: "assets/project5.webm" },
-      { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.webm", video: "assets/project6.webm" },
-      { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.webm", video: "assets/project7.webm" },
-      { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.webm", video: "assets/project8.webm" }
+      { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.webm", video: "assets/project1.mp4" },
+      { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.webm", video: "assets/project2.mp4" },
+      { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.webm", video: "assets/project3.mp4" },
+      { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.webm", video: "assets/project4.mp4" },
+      { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.webm", video: "assets/project5.mp4" },
+      { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.webm", video: "assets/project6.mp4" },
+      { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.webm", video: "assets/project7.mp4" },
+      { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.webm", video: "assets/project8.mp4" }
     ];
 
     // Testimonials
@@ -326,7 +326,7 @@
 
       const src = document.createElement('source');
       src.src = heroVideo;
-      src.type = 'video/webm';
+      src.type = 'video/mp4';
       vid.appendChild(src);
 
       el.innerHTML = '';
@@ -361,4 +361,5 @@
     // Init first testimonial
     showTestimonial();
 </script>
+
 
