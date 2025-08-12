@@ -3,75 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christian Jungco – Creative Director, Animator & Brand Builder</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Christian Jungco - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple fade-in animation to replace Framer Motion */
+    .fade-in { animation: fadeIn 0.6s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#1b1b1b] text-white antialiased">
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-text">
-      <h1>Christian Jungco</h1>
-      <h2>Creative Director, Animator & Brand Builder</h2>
-      <p>Turning bold ideas into visually stunning experiences through animation, design, and brand strategy.</p>
-    </div>
-    <div class="hero-preview">
-      <img src="assets/animated-placeholder.gif" alt="Animated Project Preview" />
-    </div>
-  </header>
+  <div class="max-w-7xl mx-auto px-8 py-16">
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-md bg-[#EFD318] flex items-center justify-center text-black font-semibold">CJ</div>
+        <div class="text-sm opacity-80">Christian Jungco</div>
+      </div>
+      <nav class="space-x-8 text-sm opacity-80 hidden md:flex">
+        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="text-[#EFD318]">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Projects Grid -->
-  <section class="projects">
-    <h3>Featured Projects</h3>
-    <div class="project-grid">
-      <div class="project-card"><img src="assets/project1.jpg" alt="Project 1"></div>
-      <div class="project-card"><img src="assets/project2.jpg" alt="Project 2"></div>
-      <div class="project-card"><img src="assets/project3.jpg" alt="Project 3"></div>
-    </div>
-  </section>
+    <!-- HERO -->
+    <section class="grid grid-cols-12 gap-8 items-center mb-20">
+      <!-- Left -->
+      <div class="col-span-7 fade-in">
+        <h1 class="text-5xl md:text-6xl leading-tight font-extrabold tracking-tight">
+          Christian Jungco
+          <span class="block text-xl font-medium mt-3 text-[#EFD318]">Creative Director, Animator & Brand Builder</span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-gray-300">
+          I design motion-led brand experiences and craft visual narratives that increase clarity and conversion...
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#projects" class="inline-flex items-center gap-3 px-6 py-3 rounded-md bg-[#EFD318] text-black font-semibold shadow-lg">View Work</a>
+          <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3 rounded-md border border-gray-700 text-sm opacity-90">Hire Me</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4 text-xs text-gray-400">
+          <span>Available for freelance — open to collaborations</span>
+          <span class="px-2">•</span>
+          <span>Based in Philippines — works globally</span>
+        </div>
+      </div>
+      <!-- Right -->
+      <div class="col-span-5">
+        <div class="rounded-2xl bg-gradient-to-br from-[#2a2a2a] to-[#111111] border border-gray-800 overflow-hidden shadow-2xl h-[420px] md:h-[480px] flex items-center justify-center">
+          <div class="absolute inset-4 rounded-xl border border-dashed border-gray-700 flex items-center justify-center p-6">
+            <div class="text-center opacity-60">
+              <div class="mb-4 text-sm">Animated Project Preview</div>
+              <div class="text-xs">(Insert Lottie / HTML5 Canvas / Video)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- About Me -->
-  <section class="about">
-    <div class="about-text">
-      <h3>About Me</h3>
-      <p>With years of experience in animation, art direction, and brand building, I craft compelling stories and powerful visuals that connect brands with their audiences.</p>
-    </div>
-    <div class="about-photo">
-      <img src="assets/profile.jpg" alt="Christian Jungco Portrait" />
-    </div>
-  </section>
+    <!-- Projects -->
+    <section id="projects" class="mb-20">
+      <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
+      <div class="grid grid-cols-4 gap-6">
+        <!-- Example project -->
+        <a href="#" class="group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]">
+          <div class="relative h-44 md:h-56 lg:h-48">
+            <img src="https://picsum.photos/1200/800?random=1" alt="Project 1" class="object-cover w-full h-full group-hover:scale-105 transition-transform" />
+          </div>
+          <div class="p-4">
+            <div class="text-sm font-medium">Project 1</div>
+            <div class="text-xs opacity-60 mt-1">Animation • Brand • Art Direction</div>
+          </div>
+        </a>
+        <!-- Duplicate the above block for more projects -->
+      </div>
+    </section>
 
-  <!-- Skills & Services -->
-  <section class="skills">
-    <h3>Skills & Services</h3>
-    <div class="skills-grid">
-      <div class="skill"><img src="assets/icon-animation.svg" alt=""> Animation</div>
-      <div class="skill"><img src="assets/icon-design.svg" alt=""> Art Direction</div>
-      <div class="skill"><img src="assets/icon-brand.svg" alt=""> Brand Building</div>
-    </div>
-  </section>
+    <!-- About -->
+    <section id="about" class="grid grid-cols-12 gap-8 items-start mb-20">
+      <div class="col-span-5">
+        <div class="rounded-xl overflow-hidden border border-gray-800 bg-white text-black p-6">
+          <div class="w-full h-64 rounded-md overflow-hidden mb-4">
+            <img src="https://picsum.photos/seed/portrait/800/1000" alt="Portrait" class="object-cover w-full h-full" />
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Christian Jungco</h3>
+          <p class="text-sm text-gray-700">
+            I’m a creative director and animator specializing in visual storytelling...
+          </p>
+        </div>
+      </div>
+      <div class="col-span-7">
+        <h3 class="text-2xl font-semibold mb-4">Skills & Services</h3>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">A</div>
+            <div>
+              <div class="font-medium">Animation & Motion Design</div>
+              <div class="text-sm opacity-70">2D/3D animation, Lottie, rigging</div>
+            </div>
+          </div>
+          <!-- Repeat for other skills -->
+        </div>
+      </div>
+    </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h3>Testimonials</h3>
-    <div class="testimonial-carousel">
-      <blockquote>"Christian transformed our brand visuals into something unforgettable!"</blockquote>
-      <blockquote>"A creative visionary with a strong sense of strategy."</blockquote>
-      <blockquote>"Professional, innovative, and truly collaborative."</blockquote>
-    </div>
-  </section>
+    <!-- Testimonials -->
+    <section class="mb-20">
+      <h3 class="text-2xl font-semibold mb-6">Testimonials</h3>
+      <div class="relative bg-[#111111] border border-gray-800 rounded-xl p-8">
+        <blockquote id="testimonial" class="text-gray-200 text-lg leading-relaxed fade-in">
+          “Christian transformed our brand with narrative-driven animation...”
+        </blockquote>
+        <div class="mt-4 text-sm text-gray-400" id="testimonial-author">A. Lopez — Head of Product</div>
+        <div class="mt-6 flex gap-3">
+          <button onclick="prevTestimonial()" class="rounded-md border border-gray-700 px-3 py-2 text-sm">Prev</button>
+          <button onclick="nextTestimonial()" class="rounded-md bg-[#EFD318] px-3 py-2 text-black font-medium">Next</button>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact Form -->
-  <section class="contact">
-    <h3>Contact Me</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <!-- Contact -->
+    <section id="contact" class="mb-12">
+      <h3 class="text-3xl font-semibold mb-4">Let’s make something together</h3>
+      <form class="space-y-4">
+        <input type="text" placeholder="Name" required class="w-full p-3 rounded-md bg-[#1c1c1c] border border-gray-700" />
+        <input type="email" placeholder="Email" required class="w-full p-3 rounded-md bg-[#1c1c1c] border border-gray-700" />
+        <textarea placeholder="Message" rows="6" required class="w-full p-3 rounded-md bg-[#1c1c1c] border border-gray-700"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#EFD318] text-black rounded-md font-semibold">Send Message</button>
+      </form>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex items-center justify-between">
+      <div>© 2025 Christian Jungco — All rights reserved</div>
+      <div class="space-x-4">
+        <a href="#" class="opacity-80">Dribbble</a>
+        <a href="#" class="opacity-80">Behance</a>
+        <a href="#" class="opacity-80">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const testimonials = [
+      {quote: "Christian transformed our brand with narrative-driven animation...", author: "A. Lopez — Head of Product"},
+      {quote: "Meticulous direction, timed motion, and crisp visual storytelling...", author: "S. Ramos — Creative Lead"},
+      {quote: "Delivered on-brand animations and helped refine our messaging...", author: "M. Chen — Founder"}
+    ];
+    let index = 0;
+    function showTestimonial() {
+      document.getElementById('testimonial').innerText = `“${testimonials[index].quote}”`;
+      document.getElementById('testimonial-author').innerText = testimonials[index].author;
+    }
+    function prevTestimonial() {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial();
+    }
+    function nextTestimonial() {
+      index = (index + 1) % testimonials.length;
+      showTestimonial();
+    }
+  </script>
+
 </body>
 </html>
