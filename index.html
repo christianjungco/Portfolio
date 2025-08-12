@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Tailwind Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tailwind Website</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
   <!-- Hero Section -->
   <section class="relative w-full h-screen bg-gray-900 flex items-center justify-center overflow-hidden">
-    <!-- Media Container -->
     <div class="relative w-full h-full flex items-center justify-center p-4">
       <video 
         src="hero-video.mp4" 
         autoplay muted loop 
         class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg">
       </video>
-      <!-- Or replace with image -->
+      <!-- Uncomment to use image instead of video -->
       <!-- <img src="hero-image.jpg" alt="Hero Image" class="max-w-full max-h-full object-contain rounded-xl border-4 border-white shadow-lg"> -->
     </div>
-    <!-- Optional overlay text -->
     <div class="absolute text-center text-white p-4">
       <h1 class="text-4xl md:text-6xl font-bold">Welcome to My Website</h1>
       <p class="mt-4 text-lg md:text-xl">Your tagline here</p>
     </div>
   </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white text-gray-900">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6 text-center">About Us</h2>
+      <p class="text-lg leading-relaxed text-center">
+        This is where your introduction or brand story goes. You can describe what you do, your services, or your mission here.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 bg-gray-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6 text-center">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="gallery1.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="gallery2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="gallery3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 bg-white text-gray-900">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+      <p class="mb-4">Email: your@email.com</p>
+      <p>Phone: +123 456 7890</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
