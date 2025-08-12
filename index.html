@@ -253,14 +253,14 @@
        Filenames used by default below (edit if you prefer different names):
 
          - assets/portrait.jpg               (portrait image)
-         - assets/hero-preview.mp4           (hero preview - video only)
-         - assets/project1.mp4
-         - assets/project2.mp4
+         - assets/hero-preview.webm          (hero preview - video only)
+         - assets/project1.webm
+         - assets/project2.webm
          - ...
          - assets/project8.mp4
 
        Recommended sizes:
-         - hero-preview.mp4: 1280×720 (H.264, ~3–10MB depending on length)
+         - hero-preview.webm: 1280×720 (H.264, ~3–10MB depending on length)
          - project videos: same ratio and web-optimized for quick loading
     ===================================================== */
 
@@ -326,7 +326,7 @@
 
       const src = document.createElement('source');
       src.src = heroVideo;
-      src.type = 'video/mp4';
+      src.type = 'video/webm';
       vid.appendChild(src);
 
       el.innerHTML = '';
@@ -361,3 +361,4 @@
     // Init first testimonial
     showTestimonial();
 </script>
+
