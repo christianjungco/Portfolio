@@ -67,7 +67,7 @@
           <div id="hero-media" class="absolute inset-4 rounded-xl border border-dashed border-gray-700 flex items-center justify-center p-6 placeholder-box">
             <div class="text-center opacity-60">
               <div class="mb-4 text-sm">Animated Project Preview</div>
-              <div class="text-xs">(Replace with <hero-preview class="mp4"></hero-preview> in /assets)</div>
+              <div class="text-xs">(Replace with hero-preview.mp4 or hero-preview.jpg in /assets)</div>
             </div>
           </div>
 
@@ -109,14 +109,14 @@
             <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">A</div>
             <div>
               <div class="font-medium">Animation & Motion Design</div>
-              <div class="text-sm opacity-70">2D animation, frame-by-frame, video editing, motion graphics,</div>
+              <div class="text-sm opacity-70">2D/3D animation, Lottie, frame-by-frame, rigging</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">B</div>
             <div>
               <div class="font-medium">Art Direction</div>
-              <div class="text-sm opacity-70">Concepting, Illustrations, storyboarding, visual systems</div>
+              <div class="text-sm opacity-70">Concepting, storyboarding, visual systems</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -138,10 +138,10 @@
         <div class="mt-8">
           <h4 class="text-lg font-medium mb-3">Tools & Workflow</h4>
           <div class="flex flex-wrap gap-3 text-sm text-gray-300">
-            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe After Effects</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe Animate</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">Social Media Management</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">SEO</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">After Effects</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Cinema 4D</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Figma</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Lottie / Bodymovin</span>
             <span class="px-3 py-1 rounded-md border border-gray-700">Photoshop</span>
           </div>
         </div>
@@ -193,25 +193,7 @@
                 <div class="text-xs text-gray-400">Or email directly: creativesuite.christian@gmail.com</div>
               </div>
             </form>
-            <div id="form-result" class="mt-3 text-sm text-green-400 hidden">Message sent! Thank you for reaching out.</div>
-            <!-- 
-              Backend enabled via FormSubmit.co.
-              1. The form below submits directly to your email using FormSubmit.co.
-              2. No JS submit handler is needed; remove or comment out the JS handler for #contact-form.
-              3. Optionally, add a hidden input for spam prevention:
-               <input type="text" name="_honey" style="display:none">
-              4. See https://formsubmit.co/ for more info.
-            -->
-            <script>
-              // Remove or comment out the JS submit handler for #contact-form
-              // document.getElementById('contact-form').addEventListener('submit', ...);
-            </script>
-            <form id="contact-form" action="https://formsubmit.co/creativesuite.christian@gmail.com" method="POST" class="space-y-4">
-              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="text" name="_honey" style="display:none">
-              <!-- The rest of your form fields remain unchanged -->
-            </form>
+            <div id="form-result" class="mt-3 text-sm text-green-400 hidden">Message simulated (no backend configured).</div>
           </div>
         </div>
 
@@ -239,126 +221,153 @@
     <footer class="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex items-center justify-between">
       <div>© <span id="year"></span> Christian Jungco — All rights reserved</div>
       <div class="space-x-4">
-        <a href="https://www.facebook.com/christianjungco.creatives" class="opacity-80" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.onlinejobs.ph/jobseekers/info/2420743" class="opacity-80" target="_blank" rel="noopener">Onlinejobs.ph</a>
-        <a href="https://www.linkedin.com/in/christian-jungco-17580a177/" class="opacity-80" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" class="opacity-80">Dribbble</a>
+        <a href="#" class="opacity-80">Behance</a>
+        <a href="#" class="opacity-80">LinkedIn</a>
       </div>
     </footer>
   </div>
 
- <script>
-  /* ========== CONFIG: Replace filenames here ==========
+  <script>
+    /* ========== CONFIG: Replace filenames here ==========
 
-     Place your media files in an `assets/` folder in the same repo.
-     Filenames used by default below (edit if you prefer different names):
+       Place your media files in an `assets/` folder in the same repo.
+       Filenames used by default below (edit if you prefer different names):
 
-       - assets/portrait.jpg               (portrait image)
-       - assets/hero-preview.mp4           (hero preview - video only)
-       - All projects now use hero-preview.mp4/.webm
+         - assets/portrait.jpg               (portrait image)
+         - assets/hero-preview.mp4 or .jpg   (hero preview - video preferred)
+         - assets/project1.jpg / project1.mp4
+         - assets/project2.jpg / project2.mp4
+         - ...
+         - assets/project8.jpg / project8.mp4
 
-     Recommended sizes:
-       - hero-preview.webm: 1280×720 (VP9, ~3–10MB depending on length)
-       - project videos: same ratio and web-optimized for quick loading
-  ===================================================== */
+       Recommended sizes:
+         - hero-preview.mp4: 1280×720 (H.264, ~3–10MB depending on length)
+         - project thumbnails: 1200×800 (web-optimized: ~200–400KB)
+         - portrait.jpg: 800×1000
+    ===================================================== */
 
-  // Projects array (all using hero-preview.mp4)
-  const projects = [
-    { id: 1, title: "Arid Green", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 2, title: "Jelly Fish Chair", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 3, title: "Hawaii Residential Solar", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 4, title: "Mr. House", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 5, title: "La Vina App", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 6, title: "Ey Bright Tree", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 7, title: "Radium", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" },
-    { id: 8, title: "Security Risk", subtitle: "Animation • Brand • Art Direction", img: "assets/hero-preview.webm", video: "assets/hero-preview.mp4" }
-  ];
+    // Projects array: specify either image OR video file for each slot.
+    // If both provided, video will be used.
+    const projects = [
+      { id: 1, title: "Project 1", subtitle: "Animation • Brand • Art Direction", img: "assets/project1.jpg", video: "assets/project1.mp4" },
+      { id: 2, title: "Project 2", subtitle: "Animation • Brand • Art Direction", img: "assets/project2.jpg", video: null },
+      { id: 3, title: "Project 3", subtitle: "Animation • Brand • Art Direction", img: "assets/project3.jpg", video: "assets/project3.mp4" },
+      { id: 4, title: "Project 4", subtitle: "Animation • Brand • Art Direction", img: "assets/project4.jpg", video: null },
+      { id: 5, title: "Project 5", subtitle: "Animation • Brand • Art Direction", img: "assets/project5.jpg", video: null },
+      { id: 6, title: "Project 6", subtitle: "Animation • Brand • Art Direction", img: "assets/project6.jpg", video: null },
+      { id: 7, title: "Project 7", subtitle: "Animation • Brand • Art Direction", img: "assets/project7.jpg", video: null },
+      { id: 8, title: "Project 8", subtitle: "Animation • Brand • Art Direction", img: "assets/project8.jpg", video: null }
+    ];
 
-  // Testimonials
-  const testimonials = [
-    { quote: "Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.", author: "A. Lopez — Product Lead" },
-    { quote: "Meticulous direction, timed motion, and crisp visual storytelling — an absolute pleasure to collaborate with.", author: "S. Ramos — Creative Lead" },
-    { quote: "Delivered on-brand animations and helped refine our messaging. Strategic and detail-oriented.", author: "M. Chen — Founder" }
-  ];
+    // Testimonials
+    const testimonials = [
+      { quote: "Christian transformed our brand with narrative-driven animation. The results increased engagement across our channels.", author: "A. Lopez — Product Lead" },
+      { quote: "Meticulous direction, timed motion, and crisp visual storytelling — an absolute pleasure to collaborate with.", author: "S. Ramos — Creative Lead" },
+      { quote: "Delivered on-brand animations and helped refine our messaging. Strategic and detail-oriented.", author: "M. Chen — Founder" }
+    ];
 
-  // Render projects grid
-  const grid = document.getElementById('projects-grid');
-  projects.forEach(p => {
-    const a = document.createElement('a');
-    a.href = "#";
-    a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
-    a.innerHTML = `
-      <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
-        <video class="project-video" playsinline muted loop preload="metadata">
-          <source src="${p.video}" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
-      </div>
-      <div class="p-4">
-        <div class="text-sm font-medium">${p.title}</div>
-        <div class="text-xs opacity-60 mt-1">${p.subtitle}</div>
-      </div>
-    `;
-    grid.appendChild(a);
+    // Render projects grid
+    const grid = document.getElementById('projects-grid');
+    projects.forEach(p => {
+      const a = document.createElement('a');
+      a.href = "#";
+      a.className = "group block rounded-lg overflow-hidden border border-gray-800 bg-[#111111] transform transition-all hover:scale-[1.01]";
+      a.innerHTML = `
+        <div class="relative h-48 md:h-56 lg:h-48 bg-gray-800">
+          ${p.video ? `
+            <video class="project-video" playsinline muted loop preload="metadata" poster="${p.img}">
+              <source src="${p.video}" type="video/mp4">
+              <img class="project-media" src="${p.img}" alt="${p.title}" />
+            </video>
+          ` : `
+            <img class="project-media" loading="lazy" src="${p.img}" alt="${p.title}" onerror="this.src='https://picsum.photos/1200/800?random=${p.id}'" />
+          `}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
+        </div>
+        <div class="p-4">
+          <div class="text-sm font-medium">${p.title}</div>
+          <div class="text-xs opacity-60 mt-1">${p.subtitle}</div>
+        </div>
+      `;
+      grid.appendChild(a);
 
-    const vid = a.querySelector('video');
-    if (vid) {
+      // if video exists, try to play muted autoplay (some browsers allow muted autoplay)
+      if (p.video) {
+        const vid = a.querySelector('video');
+        if (vid) {
+          vid.muted = true;
+          vid.loop = true;
+          // attempt to autoplay; if blocked, show poster image
+          vid.play().catch(() => {});
+        }
+      }
+    });
+
+    // Hero media: replace with video if file exists, else image (we assume file placed by you).
+    (function setupHeroMedia(){
+      const el = document.getElementById('hero-media');
+      // Names to try:
+      const heroVideo = 'assets/hero-preview.mp4';
+      const heroImage = 'assets/hero-preview.jpg';
+
+      // We'll try to insert both; if video can't play, the poster/fallback image remains visible.
+      const vid = document.createElement('video');
+      vid.className = 'w-full h-full rounded-xl project-video';
+      vid.playsInline = true;
       vid.muted = true;
       vid.loop = true;
-      vid.play().catch(() => {});
+      vid.preload = 'metadata';
+      vid.style.objectFit = 'cover';
+      vid.poster = heroImage;
+
+      const src = document.createElement('source');
+      src.src = heroVideo;
+      src.type = 'video/mp4';
+      vid.appendChild(src);
+
+      const img = document.createElement('img');
+      img.className = 'object-cover w-full h-full rounded-xl';
+      img.src = heroImage;
+      img.alt = 'Hero preview';
+      img.loading = 'lazy';
+
+      // Replace placeholder with video if the file exists (we try to play; if it fails we fallback to image).
+      // Note: checking file existence via network may be restricted under some hosts; user-hosted files in same repo will work.
+      // We'll attempt to set video and let browser choose.
+      el.innerHTML = '';
+      el.appendChild(vid);
+      el.appendChild(img);
+
+      vid.addEventListener('loadedmetadata', () => {
+        // try autoplay
+        vid.play().catch(() => { /* if blocked, image will remain visible as poster */ });
+      });
+    })();
+
+    // Testimonials behaviour
+    let testiIndex = 0;
+    function showTestimonial(){
+      const t = testimonials[testiIndex];
+      document.getElementById('testimonial').innerText = `“${t.quote}”`;
+      document.getElementById('testimonial-author').innerText = t.author;
     }
-  });
+    document.getElementById('prev-testi').addEventListener('click', () => { testiIndex = (testiIndex - 1 + testimonials.length) % testimonials.length; showTestimonial(); });
+    document.getElementById('next-testi').addEventListener('click', () => { testiIndex = (testiIndex + 1) % testimonials.length; showTestimonial(); });
 
-  // Hero media: video only
-  (function setupHeroMedia(){
-    const el = document.getElementById('hero-media');
-    const heroVideo = 'assets/hero-preview.mp4';
-
-    const vid = document.createElement('video');
-    vid.className = 'w-full h-full rounded-xl project-video';
-    vid.playsInline = true;
-    vid.muted = true;
-    vid.loop = true;
-    vid.preload = 'metadata';
-    vid.style.objectFit = 'cover';
-
-    const src = document.createElement('source');
-    src.src = heroVideo;
-    src.type = 'video/mp4';
-    vid.appendChild(src);
-
-    el.innerHTML = '';
-    el.appendChild(vid);
-
-    vid.addEventListener('loadedmetadata', () => {
-      vid.play().catch(() => {});
+    // Contact form (simulated)
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('form-result').classList.remove('hidden');
+      setTimeout(()=> document.getElementById('form-result').classList.add('hidden'), 3500);
+      this.reset();
     });
-  })();
 
-  // Testimonials behaviour
-  let testiIndex = 0;
-  function showTestimonial(){
-    const t = testimonials[testiIndex];
-    document.getElementById('testimonial').innerText = `“${t.quote}”`;
-    document.getElementById('testimonial-author').innerText = t.author;
-  }
-  document.getElementById('prev-testi').addEventListener('click', () => { testiIndex = (testiIndex - 1 + testimonials.length) % testimonials.length; showTestimonial(); });
-  document.getElementById('next-testi').addEventListener('click', () => { testiIndex = (testiIndex + 1) % testimonials.length; showTestimonial(); });
+    // Set current year
+    document.getElementById('year').innerText = new Date().getFullYear();
 
-  // Contact form (simulated)
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('form-result').classList.remove('hidden');
-    setTimeout(()=> document.getElementById('form-result').classList.add('hidden'), 3500);
-    this.reset();
-  });
-
-  // Set current year
-  document.getElementById('year').innerText = new Date().getFullYear();
-
-  // Init first testimonial
-  showTestimonial();
-</script>
-
-
-
-
+    // On page load, call show testimonial initial
+    showTestimonial();
+  </script>
+</body>
+</html>
