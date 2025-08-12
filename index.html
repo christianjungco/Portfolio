@@ -309,6 +309,7 @@
       const el = document.getElementById('hero-media');
       // Names to try:
       const heroVideo = 'assets/hero-preview.mp4';
+      const heroImage = 'assets/hero-preview.jpg';
 
       // We'll try to insert both; if video can't play, the poster/fallback image remains visible.
       const vid = document.createElement('video');
@@ -324,6 +325,12 @@
       src.src = heroVideo;
       src.type = 'video/mp4';
       vid.appendChild(src);
+
+      const img = document.createElement('img');
+      img.className = 'object-cover w-full h-full rounded-xl';
+      img.src = heroImage;
+      img.alt = 'Hero preview';
+      img.loading = 'lazy';
 
       // Replace placeholder with video if the file exists (we try to play; if it fails we fallback to image).
       // Note: checking file existence via network may be restricted under some hosts; user-hosted files in same repo will work.
@@ -364,4 +371,3 @@
   </script>
 </body>
 </html>
-
