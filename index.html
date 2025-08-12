@@ -67,7 +67,7 @@
           <div id="hero-media" class="absolute inset-4 rounded-xl border border-dashed border-gray-700 flex items-center justify-center p-6 placeholder-box">
             <div class="text-center opacity-60">
               <div class="mb-4 text-sm">Animated Project Preview</div>
-              <div class="text-xs">(Replace with hero-preview.mp4 or hero-preview.jpg in /assets)</div>
+              <div class="text-xs">(Replace with <hero-preview class="mp4"></hero-preview> in /assets)</div>
             </div>
           </div>
 
@@ -109,14 +109,14 @@
             <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">A</div>
             <div>
               <div class="font-medium">Animation & Motion Design</div>
-              <div class="text-sm opacity-70">2D/3D animation, Lottie, frame-by-frame, rigging</div>
+              <div class="text-sm opacity-70">2D animation, frame-by-frame, video editing, motion graphics,</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-12 h-12 rounded-lg bg-[#EFD318] flex items-center justify-center text-black font-semibold">B</div>
             <div>
               <div class="font-medium">Art Direction</div>
-              <div class="text-sm opacity-70">Concepting, storyboarding, visual systems</div>
+              <div class="text-sm opacity-70">Concepting, Illustrations, storyboarding, visual systems</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -138,10 +138,10 @@
         <div class="mt-8">
           <h4 class="text-lg font-medium mb-3">Tools & Workflow</h4>
           <div class="flex flex-wrap gap-3 text-sm text-gray-300">
-            <span class="px-3 py-1 rounded-md border border-gray-700">After Effects</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">Cinema 4D</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">Figma</span>
-            <span class="px-3 py-1 rounded-md border border-gray-700">Lottie / Bodymovin</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe After Effects</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Adobe Animate</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">Social Media Management</span>
+            <span class="px-3 py-1 rounded-md border border-gray-700">SEO</span>
             <span class="px-3 py-1 rounded-md border border-gray-700">Photoshop</span>
           </div>
         </div>
@@ -193,7 +193,25 @@
                 <div class="text-xs text-gray-400">Or email directly: creativesuite.christian@gmail.com</div>
               </div>
             </form>
-            <div id="form-result" class="mt-3 text-sm text-green-400 hidden">Message simulated (no backend configured).</div>
+            <div id="form-result" class="mt-3 text-sm text-green-400 hidden">Message sent! Thank you for reaching out.</div>
+            <!-- 
+              Backend enabled via FormSubmit.co.
+              1. The form below submits directly to your email using FormSubmit.co.
+              2. No JS submit handler is needed; remove or comment out the JS handler for #contact-form.
+              3. Optionally, add a hidden input for spam prevention:
+               <input type="text" name="_honey" style="display:none">
+              4. See https://formsubmit.co/ for more info.
+            -->
+            <script>
+              // Remove or comment out the JS submit handler for #contact-form
+              // document.getElementById('contact-form').addEventListener('submit', ...);
+            </script>
+            <form id="contact-form" action="https://formsubmit.co/creativesuite.christian@gmail.com" method="POST" class="space-y-4">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none">
+              <!-- The rest of your form fields remain unchanged -->
+            </form>
           </div>
         </div>
 
@@ -221,9 +239,9 @@
     <footer class="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex items-center justify-between">
       <div>© <span id="year"></span> Christian Jungco — All rights reserved</div>
       <div class="space-x-4">
-        <a href="#" class="opacity-80">Dribbble</a>
-        <a href="#" class="opacity-80">Behance</a>
-        <a href="#" class="opacity-80">LinkedIn</a>
+        <a href="https://www.facebook.com/christianjungco.creatives" class="opacity-80" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.onlinejobs.ph/jobseekers/info/2420743" class="opacity-80" target="_blank" rel="noopener">Onlinejobs.ph</a>
+        <a href="https://www.linkedin.com/in/christian-jungco-17580a177/" class="opacity-80" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </footer>
   </div>
@@ -371,3 +389,4 @@
   </script>
 </body>
 </html>
+
