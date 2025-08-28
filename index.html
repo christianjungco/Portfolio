@@ -149,19 +149,26 @@
       </div>
     </section>
 
-    <!-- Experience -->
-<section class="mb-20">
+  <!-- Experience -->
+<section id="experience" class="mb-20">
   <h3 class="text-2xl font-semibold mb-6">Experience</h3>
-  <div class="relative bg-[#111111] border border-gray-800 rounded-xl p-8">
-    <div class="flex items-start gap-6">
-      <div class="flex-1">
+  <div class="bg-[#111111] border border-gray-800 rounded-xl p-8 flex flex-col lg:flex-row items-start gap-8">
+    
+    <!-- Logo + Quote + Author inline -->
+    <div class="flex flex-1 items-start gap-6">
+      <div class="flex-shrink-0">
+        <img id="experience-logo" src="" alt="Company Logo" class="w-20 h-20 object-contain border border-gray-700 rounded-md bg-white p-1">
+      </div>
+      <div>
         <blockquote id="experience-quote" class="text-gray-200 text-lg leading-relaxed fade-in"></blockquote>
         <div class="mt-4 text-sm text-gray-400" id="experience-author"></div>
       </div>
-      <div class="w-36 flex flex-col gap-3">
-        <button id="prev-exp" class="rounded-md border border-gray-700 px-3 py-2 text-sm">Prev</button>
-        <button id="next-exp" class="rounded-md bg-[#EFD318] px-3 py-2 text-black font-medium">Next</button>
-      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex-shrink-0 flex gap-3 mt-6 lg:mt-0">
+      <button id="prev-exp" class="rounded-md border border-gray-700 px-4 py-2 text-sm">Prev</button>
+      <button id="next-exp" class="rounded-md bg-[#EFD318] px-4 py-2 text-black font-medium">Next</button>
     </div>
   </div>
 
@@ -425,6 +432,7 @@ showExperience();
     // Init first testimonial
     showTestimonial();
 </script>
+
 
 
 
