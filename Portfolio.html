@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christian Jungco — Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[#1b1b1b] text-white antialiased">
+  <div class="max-w-7xl mx-auto px-8 py-16">
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-md bg-[#EFD318] flex items-center justify-center text-black font-semibold">CJ</div>
+        <div class="text-sm opacity-80">Christian Jungco</div>
+      </div>
+      <nav class="space-x-8 text-sm opacity-80 hidden md:flex">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="experience">Experience</a>
+        <a href="services">Services</a>
+        <a href="contact" class="text-[#EFD318]">Contact</a>
+      </nav>
+    </header>
+  <!-- Projects -->
+    <section id="projects" class="mb-20">
+      <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex items-center justify-between">
+      <div>© <span id="year"></span> Christian Jungco — All rights reserved</div>
+      <div class="space-x-4">
+        <a href="https://www.facebook.com/christianjungco.creatives" target="_blank">Facebook</a>
+        <a href="https://www.onlinejobs.ph/jobseekers/info/2420743" target="_blank">Onlinejobs.ph</a>
+        <a href="https://www.linkedin.com/in/christian-jungco-17580a177/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
